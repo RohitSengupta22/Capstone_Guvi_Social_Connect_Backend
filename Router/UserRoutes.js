@@ -5,6 +5,8 @@ const bcrypt = require('bcrypt');
 const router = express.Router();
 const User = require('../Schemas/User.js');
 const fetchUser = require('../Middleware/FetchUser.js');
+const crypto = require('crypto');
+const nodemailer = require('nodemailer');
 
 router.post('/signup', async (req, res) => { //signup endpoint
     try {
@@ -96,5 +98,7 @@ router.get('/user', fetchUser, async(req,res) =>{
   
 
 })
+
+
 
 module.exports = router;
